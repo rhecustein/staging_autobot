@@ -6,11 +6,7 @@
     <a href="{{ route('home') }}#produk" class="text-sm font-semibold text-slate-500 hover:text-[#3759d7]">← Kembali ke produk</a>
     <div class="grid md:grid-cols-2 gap-8 md:gap-14 mt-6 items-center">
         <div class="relative min-h-[360px] md:min-h-[500px] rounded-[2rem] bg-gradient-to-br from-[#e8edff] via-white to-[#dcf6f5] flex items-center justify-center overflow-hidden">
-            @if($product->isSubscription())
-                <div class="absolute w-72 h-72 bg-white rounded-full blur-sm"></div><span class="relative text-[10rem] md:text-[13rem] drop-shadow-xl">{{ $product->emoji }}</span>
-            @else
-                <img src="{{ asset('images/products/'.$product->slug.'.webp') }}" alt="{{ $product->name }}" class="absolute inset-0 w-full h-full object-cover">
-            @endif
+            <img src="{{ asset('images/products/'.$product->slug.'.webp') }}" alt="{{ $product->name }}" class="absolute inset-0 w-full h-full object-cover">
             <span class="absolute left-6 top-6 rounded-full bg-white/90 px-4 py-2 text-xs font-bold text-[#3759d7]">{{ $product->isSubscription() ? 'LAYANAN AUTOBOT' : 'KOLEKSI AUTOBOT' }}</span>
         </div>
         <div class="py-4"><p class="text-xs uppercase tracking-[.2em] font-bold text-[#3759d7]">{{ $product->isSubscription() ? 'PAKET LANGGANAN' : 'MERCHANDISE PILIHAN' }}</p><h1 class="font-display text-4xl md:text-5xl font-extrabold tracking-tight mt-3">{{ $product->name }}</h1>
